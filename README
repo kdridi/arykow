@@ -1,6 +1,28 @@
 --------------------------------------------------------------------------------
 CHANGELOG
 --------------------------------------------------------------------------------
+2010-10-23 18:19 GMT: Initialize haml sample
+	sed -e 's,^  "Hello world.\+$,  haml :index,' -i www/hello_world.rb
+	mkdir www/views
+	cat > www/views/index.haml << "EOF"
+!!! XML
+!!! Strict
+%html{ :xmlns => "http://www.w3.org/1999/xhtml", :lang => "fr", "xml:lang" => "fr"}
+  %head
+    %title BoBlog
+    %meta{"http-equiv" => "Content-Type", :content => "text/html; charset=utf-8"}
+  %body
+    #header
+      %h1 BoBlog
+      %h2 Bob's Blog
+    #content
+    #footer
+      %p
+        All content copyright © Bob
+EOF
+	cd www
+	ruby hello_world.rb
+
 2010-10-23 18:04 GMT: Initialize sinatra framework
 	mkdir www
 	cd www
