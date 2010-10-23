@@ -1,6 +1,32 @@
 --------------------------------------------------------------------------------
 CHANGELOG
 --------------------------------------------------------------------------------
+2010-10-23 18:04 GMT: Initialize sinatra framework
+	mkdir www
+	cd www
+	gem install bundler
+	cat > Gemfile << "EOF"
+source :rubygems
+
+gem 'sinatra'
+gem 'haml'
+EOF
+	bundle install
+	cat > hello_world.rb << "EOF"
+require 'rubygems'
+
+# If you're using bundler, you will need to add these 2 lines
+require 'bundler'
+Bundler.setup
+
+require 'sinatra'
+
+get '/' do
+  "Hello world, it's #{Time.now} at the server!"
+end
+EOF
+	ruby hello_world.rb
+
 2010-10-23 17:49 GMT: Install ruby-1.9.2p0
 	export ARYKOW_HOME=/tmp/arykow
 	export MANPATH=$ARYKOW_HOME/share/man:$MANPATH
