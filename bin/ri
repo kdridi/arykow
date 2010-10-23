@@ -1,0 +1,5 @@
+#!/tmp/arykow/bin/ruby
+
+require 'rdoc/ri/driver'
+
+RDoc::RI::Driver.run ARGV

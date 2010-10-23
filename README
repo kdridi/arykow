@@ -1,0 +1,15 @@
+--------------------------------------------------------------------------------
+CHANGELOG
+--------------------------------------------------------------------------------
+2010-10-23 17:49 GMT: Install ruby-1.9.2p0
+	export ARYKOW_HOME=/tmp/arykow
+	export MANPATH=$ARYKOW_HOME/share/man:$MANPATH
+	export PATH=$ARYKOW_HOME/bin/:$PATH
+	mkdir -p $ARYKOW_HOME/src
+	cd $ARYKOW_HOME/src
+	wget ftp://ftp.ruby-lang.org//pub/ruby/1.9/ruby-1.9.2-p0.tar.bz2
+	tar xf ruby-1.9.2-p0.tar.bz2
+	cd ruby-1.9.2-p0
+	./configure --prefix=$ARYKOW_HOME
+	make -j12
+	make -j12 install
